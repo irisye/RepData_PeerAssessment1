@@ -26,7 +26,7 @@ Part 1: first use aggregate function to organize by date, and plot it out
 ```r
 sumsteps<- aggregate(steps~ date, data=activity, sum, na.rm=TRUE)
 
-barplot(sumsteps$steps, names.arg=sumsteps$date, main="Total steps by day", xlab="Date", ylab="Steps",col="red")
+hist(sumsteps$steps,breaks=seq(from=0, to=25000, by=1000), main="Total steps by day", xlab="Days", ylab="Steps",col="red")
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
@@ -113,7 +113,7 @@ Next, plot the total number of steps by day
 ```r
 sumsteps2<- aggregate(steps~ date, data=activityNew, sum, na.rm=TRUE)
 
-barplot(sumsteps2$steps, names.arg=sumsteps2$date, xlab="date", ylab="steps", main="Total steps by day", col="red")
+hist(sumsteps2$steps, breaks=seq(from=0, to=25000, by=1000), xlab="Days", ylab="Steps", main="Total steps by day", col="red")
 ```
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
